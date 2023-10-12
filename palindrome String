@@ -1,0 +1,35 @@
+package learningJava;
+import java.util.*;
+public class regPract {
+/*   Find the maximum and minimum element in an array
+	*/
+	
+	public static boolean checkPalindrome(String str, String rev ) {
+		if(str.equals(rev)) {
+			return true;
+		}
+		return false;
+		
+		
+	}
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter String:");
+		String str = scan.nextLine();
+		
+		String rev = "";
+		
+		for(int i = str.length()-1; i >= 0 ; i-- ) {
+			rev = rev+str.charAt(i);
+		}
+		
+		
+		checkPalindrome(str,rev);
+	
+		
+		
+		
+		
+		}
+	}
