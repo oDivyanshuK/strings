@@ -1,0 +1,57 @@
+package learningJava;
+import java.util.*;
+/**
+ * This program demonstrates a function to reverse words in a given string.
+ * It takes a string as input and reverses the order of words in the string.
+ */
+public class regPract {
+
+    /**
+     * Reverses the order of words in a given string.
+     *
+     * @param end   The ending index of the input string.
+     * @param start The starting index for extracting a word.
+     * @param j     An index variable used in loops.
+     * @param input The input string to reverse.
+     * @return The reversed string.
+     */
+    public static String reverseString(int end, int start, int j, String input) {
+        String result = "";
+        String word = "";
+        
+        // Traverse the input string from right to left.
+        for (int i = input.length() - 1; i >= 0; i--) {
+            if (input.charAt(i) == ' ') {
+                // When a space is encountered, extract and reverse a word.
+                start = i + 1;
+                word = "";
+                for (j = start; j <= end; j++) {
+                    word += input.charAt(j);
+                }
+                end = i - 1;
+                result = result + word + " ";
+            }
+        }
+        
+        // Extract and reverse the last word in the string.
+        word = "";
+        for (j = 0; j <= end; j++) {
+            word = word + input.charAt(j);
+        }
+        result += word;
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String input = "Helo I am Aadil";
+        int end = input.length() - 1;
+        int start = 0;
+        int j = 0;
+        
+        // Call the reverseString function to reverse the input string.
+        String reversed = reverseString(end, start, j, input);
+        
+        // Print the reversed string.
+        System.out.println("Reversed String: " + reversed);
+    }
+}
