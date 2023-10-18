@@ -1,0 +1,27 @@
+package learningJava;
+import java.util.*;
+
+public class regPract {
+			
+					public static void main(String[] args) {
+				        String str = "hello my nam is ayaan";
+				        String result = ""; // Initialize the result string
+				        String word = "";   // Initialize the word string
+
+				        for (int i = 0; i < str.length(); i++) {
+				            char currentChar = str.charAt(i); /// start from h . e
+
+				            if (currentChar != ' ') {    //if not space 
+				                word = currentChar + word; // Build the word in reverse  h,  e + h
+				            } else {
+				                result = result + word + " "; // Add the reversed word and a space
+				                word = ""; // Reset the word for the next word
+				            }
+				        }
+
+				        // Add the last word (no trailing space)
+				        result = result + word;
+
+				        System.out.println(result);
+				    }
+				}
